@@ -14,7 +14,7 @@
   </div>
   <div class="editor">
     <h2>Editor</h2>
-    <kendo-label style="margin-bottom: -10px" [for]="name" text="Name" />
+    <!-- <kendo-label style="margin-bottom: -10px" [for]="name" text="Name" />
     <kendo-textbox #name></kendo-textbox>
     <kendo-label style="margin-bottom: -10px" [for]="age" text="Age">
     </kendo-label>
@@ -22,7 +22,48 @@
       #age
       [value]="18"
       format="n0"
-    />
+    /> -->
+@if (!!xmlAsJson?.DetailComponent && xmlAsJson!.DetailComponent!.FlowLayout)
+  { 
+     <div  
+   class="flow-layout"
+    [class.row]="xmlAsJson!.DetailComponent!.FlowLayout![0].$?.row ==='true'">
+     @for (cell of xmlAsJson!.DetailComponent!.FlowLayout![0].Cell; track $index) {
+      @if(cell.Textbox){
+        <kendo-label  [text]="cell.Textbox[0].$.value ?? 'Display Name'">
+        <kendo-textbox style="margin-top: 6px" [value]="cell.Textbox[0].$.value"></kendo-textbox>
+      </kendo-label>
+     }       
+    @else if(cell.Numberfield){
+        <kendo-label  [text]="cell.Numberfield[0].$.value ?? 'Display Name'">
+        <kendo-numerictextbox style="margin-top: 6px" [value]="18" />
+      </kendo-label>          
+      } 
+     @else if(cell.Combobox){
+        <kendo-label  [text]="cell.Combobox[0].$.value ?? 'Display Name'">
+        <kendo-dropdownlist style="margin-top: 6px" [data]=""  />
+      </kendo-label>       
+      }
+      @else if(cell.Label){
+        <div><h3 >{{cell.Label[0].$.value ?? 'Display Name'}}</h3></div>       
+      }
+      @else if(cell.FlowLayout){
+        <div 
+         class="flow-layout"
+         [class.row]="cell.FlowLayout![0].$?.row ==='true'">
+           @for (cell1 of cell.FlowLayout![0].Cell; track $index) {          
+               <div>Cell</div>
+            }  
+        </div>       
+       } 
+      @else
+        {  <div>Cell</div>}  
+    } 
+ </div>
+  }
+   
+  
+
 </div>
   <div class="attributes-panel">
     <h2>Attributes</h2>

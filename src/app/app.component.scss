@@ -57,3 +57,18 @@ h1, h2{
     padding: $standard-padding;
 }
 
+.flow-layout{
+    display: flex;
+    gap: $standard-padding;
+    flex-direction: column;
+
+    &.row{
+        flex-direction: row;
+        :nth-child(n){
+            flex: 1;
+        }
+
+    }
+}
+
+

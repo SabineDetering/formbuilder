@@ -5,7 +5,7 @@
         <Property type="number" name="Age" displayName="Age"></Property>
         <Property type="string" name="Bildung" displayName="Höchster Schulabschluss"></Property>
     </Properties>
-    <FlowLayout>
+    <FlowLayout row="false">
         <Cell>
             <Label foreground="500" value="My form" fontSize="large" fontWeight="Black"
                 horizontalAlign="left" />
@@ -24,6 +24,25 @@
                 <Option displayName="Fachhochschule" value="Fachhochschule"></Option>
                 <Option displayName="Universität" value="Universität"></Option>
             </Combobox>
+        </Cell>
+        <Cell>
+            <FlowLayout row="true">
+                <Cell>
+                    <Textbox value="#FullName" />
+                </Cell>
+                <Cell>
+                    <Numberfield value="#Age" />
+                </Cell>
+                <Cell>
+                    <Combobox value="#Bildung">
+                        <Option displayName="Hauptschule" value="Hauptschule"></Option>
+                        <Option displayName="Realschule" value="Realschule"></Option>
+                        <Option displayName="Abitur" value="Abitur"></Option>
+                        <Option displayName="Fachhochschule" value="Fachhochschule"></Option>
+                        <Option displayName="Universität" value="Universität"></Option>
+                    </Combobox>
+                </Cell>
+            </FlowLayout>
         </Cell>
     </FlowLayout>
 </DetailComponent>
