@@ -1,0 +1,59 @@
+$standard-padding: 16px;
+
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+h1, h2{
+    margin:0;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    background-color: lightblue;
+    height: 60px;
+    padding: 0 $standard-padding;   
+}
+
+.content{
+    display: flex;
+    flex: 1;
+    
+}
+
+.controls-panel{
+    display: flex;
+    flex-direction: column;
+    gap: $standard-padding;
+    width: 200px;
+    border-right: 1px solid black;
+    padding: $standard-padding;
+
+    .control{
+        padding: 8px;
+        border: 1px solid black;
+        border-radius: 4px;
+        background-color: #dfdfdf;
+    }
+}
+
+.editor{
+    display: flex;
+    flex-direction: column;
+    gap: $standard-padding;
+    flex: 1;
+    border-right: 1px solid black;
+    padding: $standard-padding;
+}
+
+.attributes-panel{
+    display: flex;
+    flex-direction: column;
+    gap: $standard-padding;
+    width: 500px;
+    padding: $standard-padding;
+}
+

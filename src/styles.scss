@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Roboto';
+    src: url(./assets/Roboto-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+    font-family: 'Roboto italic';
+    src: url(./assets/Roboto-Italic-VariableFont_wdth\,wght.ttf);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}

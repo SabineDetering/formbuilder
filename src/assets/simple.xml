@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DetailComponent xmlns="http://softproject.de/webapp/1.0" process="loadProperties.wrf">
+    <Properties>
+        <Property type="string" name="FullName" displayName="Full name"></Property>
+        <Property type="number" name="Age" displayName="Age"></Property>
+        <Property type="string" name="Bildung" displayName="Höchster Schulabschluss"></Property>
+    </Properties>
+    <FlowLayout>
+        <Cell>
+            <Label foreground="500" value="My form" fontSize="large" fontWeight="Black"
+                horizontalAlign="left" />
+        </Cell>
+        <Cell>
+            <Textbox value="#FullName" />
+        </Cell>
+        <Cell>
+            <Numberfield value="#Age" />
+        </Cell>
+        <Cell>
+            <Combobox value="#Bildung">
+                <Option displayName="Hauptschule" value="Hauptschule"></Option>
+                <Option displayName="Realschule" value="Realschule"></Option>
+                <Option displayName="Abitur" value="Abitur"></Option>
+                <Option displayName="Fachhochschule" value="Fachhochschule"></Option>
+                <Option displayName="Universität" value="Universität"></Option>
+            </Combobox>
+        </Cell>
+    </FlowLayout>
+</DetailComponent>
